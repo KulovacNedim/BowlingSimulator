@@ -16,6 +16,12 @@ import java.util.List;
 public class SimulateServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher success = req.getRequestDispatcher("view/index.jsp");
+        success.forward(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GameService gameService = new GameService();

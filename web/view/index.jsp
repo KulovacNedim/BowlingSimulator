@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
               <label for="games">Number of games to simulate:</label>
-              <input type="text" class="form-control" id="games" name="games">
+              <input type="text" class="form-control" id="games" name="games" value="1" required autocomplete="no">
             </div>
              <div class="form-group"> 
                 <button type="submit" class="btn btn-default">Simulate</button>
