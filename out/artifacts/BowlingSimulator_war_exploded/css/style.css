@@ -1,0 +1,21 @@
+.bg-header {
+    background-color: darkblue;
+    color: white;
+}
+
+.table-bordered .border-bottom {
+    border-bottom: solid 1px #ccc !important;
+}
+
+.table-bordered td {
+    border: none !important;
+    border-right: solid 1px #ccc !important;
+}
+
+table td {
+    text-align: center;
+}
+
+table.borderless td,table.borderless th{
+    border: none !important;
+}

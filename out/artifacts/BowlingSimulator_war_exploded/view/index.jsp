@@ -44,21 +44,38 @@
         </div>
       </div>
       <hr>
-      <div class="row">
-        <c:forEach items="${simulatedGames}" var="game">
-                    ${game.frames}
-                    <br>
-                                  <c:forEach items="${game.frames}" var="frame">
-                                                      ${frame.toString()}
-                                                      <br>
-                                                      
-                                                      <br>
-                                                      ${game.scoreboard.toString()}
-                                                  </c:forEach>                    <br>
-                    ${game.scoreboard.toString()}
+      <c:set var="gameCounter" value="0" scope="page" />
+      <c:forEach items="${simulatedGames}" var="game">
+        <c:set var="count" value="0" scope="page" />
+        <div class="row">                 
+          <c:set var="gameCounter" value="${gameCounter + 1}" />
+          <p><b>SIMULATION FOR GAME NUMBER ${gameCounter} (Skill level ${skillLevel})</b></p>
+           
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <c:forEach items="${game.frames}" var="frame" >
+                <c:set var="count" value="${count + 1}" />
+                   <td colspan="3" class="bg-header">Frame ${count}</td>
                 </c:forEach>
-      </div>
+              </tr>
+              <tr>
+                <c:forEach items="${game.frames}" var="frame">
+                  <td></td>
+                  <td class="border-bottom">${frame.roll1.score}</td>
+                  <td class="border-bottom">${frame.roll2.score}</td>
+                </c:forEach>
+              </tr>
+              <tr>
+                <c:forEach items="${game.scoreboard.scoreboard}" var="scoreboard">
+                  <td colspan="3"><b>${scoreboard}</b></td>
+                </c:forEach>
+              </tr>
+            </tbody>   
+          </table>                                            
+        </div>
+        <br>
+      </c:forEach>
     </div>
- 
   </body>
 </html>

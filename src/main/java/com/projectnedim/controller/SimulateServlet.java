@@ -33,6 +33,7 @@ public class SimulateServlet extends HttpServlet {
         List<Game> games = gameService.getSimulatedGames(skillLevel, numberOfGames);
 
         req.setAttribute("simulatedGames", games);
+        req.setAttribute("skillLevel", skillLevel);
 
         RequestDispatcher success = req.getRequestDispatcher("view/index.jsp");
         success.forward(req, resp);

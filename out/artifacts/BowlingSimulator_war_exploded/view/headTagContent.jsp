@@ -12,4 +12,6 @@
 <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
+<link rel="stylesheet" href="css/style.css">
+
 <title>Bowling Simulator 1.0</title>
