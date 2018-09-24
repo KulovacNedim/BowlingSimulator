@@ -17,10 +17,10 @@
           <h2>Set parameters:</h2>
         </div>
         <div class="col-sm-6">
-          <form  class="form-horizontal" action="/action_page.php">
+          <form  class="form-horizontal" action="/simulate" method="post">
             <div class="form-group">
-              <label for="sel1">Select skill level:</label>
-              <select class="form-control" id="sel1">
+              <label for="skill">Select skill level:</label>
+              <select class="form-control" id="skill" name="skill">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
               <label for="games">Number of games to simulate:</label>
-              <input type="text" class="form-control" id="games">
+              <input type="text" class="form-control" id="games" name="games">
             </div>
              <div class="form-group"> 
                 <button type="submit" class="btn btn-default">Simulate</button>
@@ -44,6 +44,20 @@
         </div>
       </div>
       <hr>
+      <div class="row">
+        <c:forEach items="${simulatedGames}" var="game">
+                    ${game.frames}
+                    <br>
+                                  <c:forEach items="${game.frames}" var="frame">
+                                                      ${frame.toString()}
+                                                      <br>
+                                                      
+                                                      <br>
+                                                      ${game.scoreboard.toString()}
+                                                  </c:forEach>                    <br>
+                    ${game.scoreboard.toString()}
+                </c:forEach>
+      </div>
     </div>
  
   </body>
