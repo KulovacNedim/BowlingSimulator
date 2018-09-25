@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page isErrorPage="false" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
@@ -63,7 +64,7 @@
                 <c:forEach items="${game.frames}" var="frame">
                   <td></td>
                   <td class="border-bottom">${frame.roll1.score}</td>
-                  <td class="border-bottom">${frame.roll2.score}</td>
+                  <td class="border-bottom  ${(frame.roll1.score + frame.roll2.score == 10) ? 'bg-img' : ''}">${(frame.roll1.score + frame.roll2.score == 10) ? '' : frame.roll2.score}</td>
                 </c:forEach>
               </tr>
               <tr>

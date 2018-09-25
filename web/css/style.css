@@ -19,3 +19,9 @@ table td {
 table.borderless td,table.borderless th{
     border: none !important;
 }
+
+.bg-img {
+    background-image: url('../images/bg_img.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
